@@ -21,7 +21,10 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pnpm setup && && source /home/codespace/.bashrc && pnpm i -g nx && pnpm i",
+	"postCreateCommand": {
+		"nxGlobal": "npm install --global nx",
+		"pnpmInstall": "pnpm install"
+	},
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
